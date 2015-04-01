@@ -14,6 +14,8 @@
 		63E7A2561ACAED9300D27186 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E7A2551ACAED9300D27186 /* Images.xcassets */; };
 		63E7A2591ACAED9300D27186 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E7A2571ACAED9300D27186 /* LaunchScreen.xib */; };
 		63E7A2651ACAED9300D27186 /* MatchMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7A2641ACAED9300D27186 /* MatchMeTests.swift */; };
+		63E7A2701ACAF34A00D27186 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7A26F1ACAF34A00D27186 /* CardView.swift */; };
+		63E7A2721ACB226A00D27186 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7A2711ACB226A00D27186 /* SwipeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		63E7A25E1ACAED9300D27186 /* MatchMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatchMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		63E7A2631ACAED9300D27186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63E7A2641ACAED9300D27186 /* MatchMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMeTests.swift; sourceTree = "<group>"; };
+		63E7A26F1ACAF34A00D27186 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		63E7A2711ACB226A00D27186 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 		63E7A2481ACAED9300D27186 /* MatchMe */ = {
 			isa = PBXGroup;
 			children = (
+				63E7A26E1ACAF31500D27186 /* Views */,
 				63E7A24B1ACAED9300D27186 /* AppDelegate.swift */,
 				63E7A2501ACAED9300D27186 /* ViewController.swift */,
 				63E7A2521ACAED9300D27186 /* Main.storyboard */,
@@ -113,6 +118,15 @@
 				63E7A2631ACAED9300D27186 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63E7A26E1ACAF31500D27186 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63E7A26F1ACAF34A00D27186 /* CardView.swift */,
+				63E7A2711ACB226A00D27186 /* SwipeView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +231,8 @@
 			files = (
 				63E7A2511ACAED9300D27186 /* ViewController.swift in Sources */,
 				63E7A24C1ACAED9300D27186 /* AppDelegate.swift in Sources */,
+				63E7A2701ACAF34A00D27186 /* CardView.swift in Sources */,
+				63E7A2721ACB226A00D27186 /* SwipeView.swift in Sources */,
 				63E7A24F1ACAED9300D27186 /* MatchMe.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
