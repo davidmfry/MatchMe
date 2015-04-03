@@ -16,6 +16,7 @@
 		63E7A2651ACAED9300D27186 /* MatchMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7A2641ACAED9300D27186 /* MatchMeTests.swift */; };
 		63E7A2701ACAF34A00D27186 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7A26F1ACAF34A00D27186 /* CardView.swift */; };
 		63E7A2721ACB226A00D27186 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7A2711ACB226A00D27186 /* SwipeView.swift */; };
+		63E7A2751ACD9E2500D27186 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7A2741ACD9E2500D27186 /* CardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		63E7A2641ACAED9300D27186 /* MatchMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchMeTests.swift; sourceTree = "<group>"; };
 		63E7A26F1ACAF34A00D27186 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		63E7A2711ACB226A00D27186 /* SwipeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		63E7A2741ACD9E2500D27186 /* CardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +85,9 @@
 		63E7A2481ACAED9300D27186 /* MatchMe */ = {
 			isa = PBXGroup;
 			children = (
+				63E7A2731ACD9DAD00D27186 /* Controllers */,
 				63E7A26E1ACAF31500D27186 /* Views */,
 				63E7A24B1ACAED9300D27186 /* AppDelegate.swift */,
-				63E7A2501ACAED9300D27186 /* ViewController.swift */,
 				63E7A2521ACAED9300D27186 /* Main.storyboard */,
 				63E7A2551ACAED9300D27186 /* Images.xcassets */,
 				63E7A2571ACAED9300D27186 /* LaunchScreen.xib */,
@@ -127,6 +129,15 @@
 				63E7A2711ACB226A00D27186 /* SwipeView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		63E7A2731ACD9DAD00D27186 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				63E7A2501ACAED9300D27186 /* ViewController.swift */,
+				63E7A2741ACD9E2500D27186 /* CardsViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 			files = (
 				63E7A2511ACAED9300D27186 /* ViewController.swift in Sources */,
 				63E7A24C1ACAED9300D27186 /* AppDelegate.swift in Sources */,
+				63E7A2751ACD9E2500D27186 /* CardsViewController.swift in Sources */,
 				63E7A2701ACAF34A00D27186 /* CardView.swift in Sources */,
 				63E7A2721ACB226A00D27186 /* SwipeView.swift in Sources */,
 				63E7A24F1ACAED9300D27186 /* MatchMe.xcdatamodeld in Sources */,

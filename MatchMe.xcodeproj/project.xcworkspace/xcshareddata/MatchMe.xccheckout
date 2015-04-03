@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CA4E83D2-881C-4395-94E1-092CD0E18F64</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MatchMe</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0E6AF00E48274A92760F7FDB836B554CF1B4DD22</key>
+		<string>https://github.com/davidmfry/MatchMe.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MatchMe.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0E6AF00E48274A92760F7FDB836B554CF1B4DD22</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/davidmfry/MatchMe.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0E6AF00E48274A92760F7FDB836B554CF1B4DD22</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0E6AF00E48274A92760F7FDB836B554CF1B4DD22</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MatchMe</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Zd-gj-ctg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MatchMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,6 +20,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="509" y="360"/>
+        </scene>
+        <!--Cards View Controller-->
+        <scene sceneID="m82-LO-c3k">
+            <objects>
+                <viewController id="5aY-Df-bda" customClass="CardsViewController" customModule="MatchMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZWj-V3-5lq"/>
+                        <viewControllerLayoutGuide type="bottom" id="V3T-iZ-EPj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="toi-Xk-cBg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7as-PP-Dsj">
+                                <rect key="frame" x="170" y="74" width="260" height="320"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="pah-ES-qLq"/>
+                                    <constraint firstAttribute="height" constant="320" id="uvg-A3-wj8"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="7as-PP-Dsj" secondAttribute="centerX" id="HxM-vF-gnQ"/>
+                            <constraint firstItem="7as-PP-Dsj" firstAttribute="top" secondItem="ZWj-V3-5lq" secondAttribute="bottom" constant="10" id="v6U-Qy-lCi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="uDH-Up-jJu"/>
+                    <connections>
+                        <outlet property="cardStackView" destination="7as-PP-Dsj" id="nji-9a-EmN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Fn-k1-DZj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="509" y="1039"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eR0-Wa-baa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Zd-gj-ctg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tKh-8r-1zW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5aY-Df-bda" kind="relationship" relationship="rootViewController" id="yja-sg-17a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r7i-Id-bYH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-240" y="1039"/>
         </scene>
     </scenes>
 </document>
