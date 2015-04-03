@@ -26,7 +26,16 @@ class SwipeView: UIView
     
     // Its weak to prevent a memeory problem IE: retain cycle
     weak var delegate: SwipeViewDelegate?
-    private let card = CardView()
+//    private let card = CardView()
+    var innerView: UIView? {
+        didSet {
+            if let v = innerView
+            {
+                addSubview(v)
+                v.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+            }
+        }
+    }
     private var originalPoint: CGPoint?
     
     required init(coder aDecoder: NSCoder)
@@ -50,11 +59,9 @@ class SwipeView: UIView
     private func initialize()
     {
         self.backgroundColor = UIColor.clearColor()
-        addSubview(card)
         
         // add a gesture recognizer the action is the name of a function called dragged
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: "dragged:"))
-        self.card.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         self.originalPoint = center
         
     }
@@ -108,9 +115,15 @@ class SwipeView: UIView
             parentWidth *= -1
         }
         
-//        UIView.animateWithDuration(0.2, animations: { () -> Void in
-//            self.center.x = self.frame.origin.x + parentWidth
-//        })
+        UIView.animateWithDuration(0.2, animations: {
+            self.center.x = self.frame.origin.x + parentWidth
+            }, completion: { success in
+                
+                if let d = self.delegate
+                {
+                    swipeDirection == Direction.Right ? d.swipedRight() : d.swipedLeft()
+                }
+        })
     }
     
     private func resetViewPosisitionAndTransform()
