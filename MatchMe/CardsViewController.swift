@@ -11,11 +11,17 @@ import UIKit
 class CardsViewController: UIViewController, SwipeViewDelegate
 {
 
+    struct Card
+    {
+        let cardView: CardView
+        let swipeView: SwipeView
+    }
+    
     let frontCardTopMargin: CGFloat = 0.0
     let backCardTopMargin: CGFloat = 10
     
-    var backCard: SwipeView?
-    var frontCard: SwipeView?
+    var backCard: Card?
+    var frontCard: Card?
     
     @IBOutlet weak var cardStackView: UIView!
     
@@ -26,19 +32,33 @@ class CardsViewController: UIViewController, SwipeViewDelegate
         super.viewDidLoad()
         self.cardStackView.backgroundColor = UIColor.clearColor()
         
-        self.backCard = SwipeView(frame: self.createCardFrame(self.backCardTopMargin))
-        self.cardStackView.addSubview(self.backCard!)
+        self.backCard = self.createCard(self.backCardTopMargin)
+        self.cardStackView.addSubview(self.backCard!.swipeView)
         
-        self.frontCard = SwipeView(frame: self.createCardFrame(self.frontCardTopMargin))
-        self.cardStackView.addSubview(self.frontCard!)
-        
-        self.backCard!.delegate = self
-        self.frontCard!.delegate = self
+        self.frontCard = self.createCard(self.frontCardTopMargin)
+        self.cardStackView.addSubview(self.frontCard!.swipeView)
     }
     
     private func createCardFrame(topMargin: CGFloat) -> CGRect
     {
         return CGRect(x: 0, y: topMargin, width: self.cardStackView.frame.width, height: self.cardStackView.frame.height)
+    }
+    
+    private func createCard(topMargin: CGFloat) -> Card
+    {
+        // Creates instances of CardView and SwipeView
+        let cardView = CardView()
+        let swipeView = SwipeView(frame: self.createCardFrame(topMargin))
+        
+        // Add the delegate
+        swipeView.delegate = self
+        
+        // Set the card instance of SwipeView to the cardView
+        swipeView.innerView = cardView
+
+        // Return the New Card Struct
+        return Card(cardView: cardView, swipeView: swipeView)
+        
     }
     
 // MARK: SwipeViewDelegate
@@ -47,7 +67,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate
         println("left")
         if let fCard = self.frontCard
         {
-            fCard.removeFromSuperview()
+            fCard.swipeView.removeFromSuperview()
         }
     }
     
@@ -56,7 +76,7 @@ class CardsViewController: UIViewController, SwipeViewDelegate
         println("right")
         if let fCard = self.frontCard
         {
-            fCard.removeFromSuperview()
+            fCard.swipeView.removeFromSuperview()
         }
     }
     
