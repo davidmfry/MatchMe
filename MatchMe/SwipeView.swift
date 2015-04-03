@@ -9,8 +9,23 @@
 import Foundation
 import UIKit
 
+protocol SwipeViewDelegate: class
+{
+    func swipedLeft()
+    func swipedRight()
+}
+
 class SwipeView: UIView
 {
+    enum Direction
+    {
+        case None
+        case Left
+        case Right
+    }
+    
+    // Its weak to prevent a memeory problem IE: retain cycle
+    weak var delegate: SwipeViewDelegate?
     private let card = CardView()
     private var originalPoint: CGPoint?
     
@@ -59,7 +74,18 @@ class SwipeView: UIView
                 center = CGPointMake(self.originalPoint!.x + distance.x, self.originalPoint!.y + distance.y)
             
             case UIGestureRecognizerState.Ended:
-                self.resetViewPosisitionAndTransform()
+                if abs(distance.x) < frame.width / 4
+                {
+                    self.resetViewPosisitionAndTransform()
+                }
+                else
+                {
+                    // if distance is graterthan 0 the card is going right else its going left
+                    self.swipe(distance.x > 0 ? Direction.Right : Direction.Left)
+                }
+                
+            
+            
             default:
                 println("Defualt triggered for GestureRecognizer")
                 break
@@ -67,6 +93,24 @@ class SwipeView: UIView
         
         
         println("Distance x: \(distance.x) y: \(distance.y)")
+    }
+    
+    func swipe(swipeDirection: Direction)
+    {
+        if swipeDirection == Direction.None
+        {
+            return
+        }
+        var parentWidth = superview!.frame.size.width
+        
+        if swipeDirection == Direction.Left
+        {
+            parentWidth *= -1
+        }
+        
+//        UIView.animateWithDuration(0.2, animations: { () -> Void in
+//            self.center.x = self.frame.origin.x + parentWidth
+//        })
     }
     
     private func resetViewPosisitionAndTransform()
